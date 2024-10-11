@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fibonacci(n) {
+        let secuencia = [];
+        for (let i = 0; i < n; i++) {
+          if (i === 0) {
+            secuencia.push(0);
+          } else if (i === 1) {
+            secuencia.push(1);
+          } else {
+            secuencia.push(secuencia[i - 1] + secuencia[i - 2]);
+          }
+        }
+        return secuencia;
+      }
+
+      let n = parseInt(
+        prompt("Inserta el número de términos de la secuencia Fibonacci:")
+      );
+
+      if (n <= 0) {
+        alert("Por favor, inserta un número entero positivo.");
+      } else {
+        let términosFibonacci = fibonacci(n);
+        alert(
+          "Los primeros " +
+            n +
+            " términos de la secuencia Fibonacci son: " +
+            términosFibonacci.join(", ")
+        );
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
