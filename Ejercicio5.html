@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function esPrimo(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      }
+
+      let numero1 = parseInt(prompt("Inserta el primer número:"));
+      let numero2 = parseInt(prompt("Inserta el segundo número:"));
+
+      if (numero1 > numero2) {
+        let temp = numero1;
+        numero1 = numero2;
+        numero2 = temp;
+      }
+
+      let numerosPrimos = [];
+
+      for (let i = numero1; i <= numero2; i++) {
+        if (esPrimo(i)) {
+          numerosPrimos.push(i);
+        }
+      }
+
+      alert(
+        "Los números primos entre " +
+          numero1 +
+          " y " +
+          numero2 +
+          " son: " +
+          numerosPrimos.join(", ")
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
