@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+
+      function celsiusAFahrenheit(celsius) {
+        return (celsius * 9) / 5 + 32;
+      }
+
+      function fahrenheitACelsius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+      }
+
+      let tipoConversion = parseInt(
+        prompt(
+          "¿Qué tipo de conversión quieres? (1 para Celsius a Fahrenheit, 2 para Fahrenheit a Celsius):"
+        )
+      );
+
+      let temperatura;
+
+      if (tipoConversion === 1) {
+        temperatura = parseFloat(
+          prompt("Inserta la temperatura en grados Celsius:")
+        );
+        let resultado = celsiusAFahrenheit(temperatura);
+        alert(
+          temperatura +
+            " grados Celsius equivalen a " +
+            resultado.toFixed(2) +
+            " grados Fahrenheit."
+        );
+      } else if (tipoConversion === 2) {
+        temperatura = parseFloat(
+          prompt("Inserta la temperatura en grados Fahrenheit:")
+        );
+        let resultado = fahrenheitACelsius(temperatura);
+        alert(
+          temperatura +
+            " grados Fahrenheit equivalen a " +
+            resultado.toFixed(2) +
+            " grados Celsius."
+        );
+      } else {
+        alert("Opción no válida. Por favor, elige 1 o 2.");
+      }
+      
+    </script>
+  </head>
+  <body></body>
+</html>
